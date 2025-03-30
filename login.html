@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - E-Governance Navigator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>E-Governance Navigator</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-btn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Citizen Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/tax-payment.html">Tax Payment</a></li>
+                            <li><a href="services/utility-bills.html">Utility Bills</a></li>
+                            <li><a href="services/file-fir.html">File FIR</a></li>
+                            <li><a href="services/personal-records.html">Personal Records</a></li>
+                            <li><a href="services/legal-documents.html">Legal Documents</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn btn-primary active">Login</a></li>
+                    <li><a href="register.html" class="btn btn-secondary">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-container">
+                    <h2>Login to Your Account</h2>
+                    <div id="error-message" class="error-message"></div>
+                    
+                    <form id="login-form" action="login" method="post">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="form-group remember-forgot">
+                            <div>
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="forgot-password.html">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="register.html">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>About E-Governance</h3>
+                    <p>The E-Governance Navigator platform provides digital access to government services, enabling citizens to interact with government departments seamlessly.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><span class="icon">Facebook</span></a>
+                        <a href="#" aria-label="Twitter"><span class="icon">Twitter</span></a>
+                        <a href="#" aria-label="Instagram"><span class="icon">Instagram</span></a>
+                        <a href="#" aria-label="Youtube"><span class="icon">Youtube</span></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News & Updates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="accessibility.html">Accessibility</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><span class="icon">Phone</span> Helpline: 1800-XXX-XXXX (Toll Free)</li>
+                        <li><span class="icon">Email</span> support@egovernance.gov</li>
+                        <li><span class="icon">Address</span> E-Governance Department, Main Government Complex, Capital City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 E-Governance Navigator. All rights reserved.</p>
+                <p>This is a demo platform. No real services are provided.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Check for registration success message
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('registration') === 'success') {
+                document.getElementById('error-message').innerHTML = 'Registration successful! Please login.';
+                document.getElementById('error-message').style.color = 'green';
+            }
+        };
+    </script>
+</body>
+</html>
